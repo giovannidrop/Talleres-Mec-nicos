@@ -20,7 +20,7 @@
       <th scope="col">codigo</th>
       <th scope="col">Vehiculo</th>
       <th scope="col">Propietario</th>
-      <th scope="col">Servicio</th>
+      <th scope="col">Accion</th>
     </tr>
   </thead>
   <tbody>
@@ -31,7 +31,7 @@
       <td>{{ $vehiculo->marca }}</td>
       <td>
         <a href="{{ route('vehiculos.edit' , ['vehiculo' => $vehiculo->id]) }}"
-            class="btn btn-info">Edit</a></li>
+            class="btn btn-info">Editar</a></li>
         <form action="{{ route('vehiculos.destroy' , ['vehiculo' => $vehiculo->id]) }}"
            method='POST' style="display: inline-block">
            @method('delete')

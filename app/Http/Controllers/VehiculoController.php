@@ -78,6 +78,13 @@ class VehiculoController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $vehiculo = Vehiculo::find($id);
+        $vehiculo->delete();
+
+        $vehiculos = DB::table('vehiculos')
+           ->join('propietarios' , 'vehiculos.id', '=' , 'propietarios.id')
+           ->select('vehiculos.*' , "propietarios.nombre")
+           ->get();
+        return view('vehiculo.index' , ['vehiculos' => $vehiculos]);
     }
 }
