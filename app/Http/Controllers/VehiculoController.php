@@ -25,7 +25,10 @@ class VehiculoController extends Controller
      */
     public function create()
     {
-        //
+        $propietarios = DB::table('propietarios')
+            ->orderBy('id')
+            ->get();
+        return view('vehiculo.new', ['propietarios' => $propietarios]);
     }
 
     /**
@@ -33,7 +36,17 @@ class VehiculoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $vehiculo = new Vehiculo();
+
+        $vehiculo->propietario_id = $request->name;
+        $vehiculo->id = $request->code;
+        $vehiculo->save();
+
+        $vehiculos = DB::table('vehiculos')
+           ->join('propietarios' , 'vehiculos.id', '=' , 'propietarios.id')
+           ->select('vehiculos.*' , 'propietarios.nombre')
+           ->get();
+        return view('vehiculo.index' , ['vehiculos' => $vehiculos]);
     }
 
     /**
