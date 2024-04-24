@@ -26,11 +26,11 @@
                 <label for="name" class="form-label">Vehiculo</label>
                 <input type="text" required class="form-control" id="name" aria-describedby="nameHelp" name="name" placeholder="Vehiculo name.">
             </div>
-            <label for="propietario">Propietario :</label>
-            <select class="form-select" id="propietario" name="codigo" required>
+            <label for="servicio">Servicio :</label>
+            <select class="form-select" id="servicio" name="codigo" required>
                 <option selected disabled value="">Choose one...</option>
-                @foreach ($propietarios as $propietario)
-                <option value="{{ $propietario->id }}">{{ $propietario->id }}</option>
+                @foreach ($servicios as $servicio)
+                <option value="{{ $servicio->id }}">{{ $servicio->id }}</option>
                 @endforeach
             </select>
             <div class="mt-3">

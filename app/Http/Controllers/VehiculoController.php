@@ -14,8 +14,8 @@ class VehiculoController extends Controller
     public function index()
     {
         $vehiculos = DB::table('vehiculos')
-           ->join('propietarios' , 'vehiculos.id', '=' , 'propietarios.id')
-           ->select('vehiculos.*' , 'propietarios.id')
+           ->join('servicios' , 'vehiculos.id', '=' , 'servicios.id')
+           ->select('vehiculos.*' , 'servicios.vehiculo_id')
            ->get();
         return view('vehiculo.index' , ['vehiculos' => $vehiculos]);
     }
@@ -25,10 +25,10 @@ class VehiculoController extends Controller
      */
     public function create()
     {
-        $propietarios = DB::table('propietarios')
-            ->orderBy('id')
+        $servicios = DB::table('servicios')
+            ->orderBy('vehiculo_id')
             ->get();
-        return view('vehiculo.new', ['propietarios' => $propietarios]);
+        return view('vehiculo.new', ['servicios' => $servicios]);
     }
 
     /**
@@ -43,8 +43,8 @@ class VehiculoController extends Controller
         $vehiculo->save();
 
         $vehiculos = DB::table('vehiculos')
-           ->join('propietarios' , 'vehiculos.id', '=' , 'propietarios.id')
-           ->select('vehiculos.*' , 'propietarios.nombre')
+           ->join('servicios' , 'vehiculos.id', '=' , 'servicios.id')
+           ->select('vehiculos.*' , 'servicios.vehiculo_id')
            ->get();
         return view('vehiculo.index' , ['vehiculos' => $vehiculos]);
     }
@@ -62,7 +62,11 @@ class VehiculoController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $vehiculo = Vehiculo::find($id);
+        $servicios = DB::table('servicios')
+            ->orderBy('vehiculo_id')
+            ->get();
+        return view('vehiculo.edit', ['vehiculo' => $vehiculo, 'servicios' => $servicios]);
     }
 
     /**
@@ -70,7 +74,17 @@ class VehiculoController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $vehiculo = vehiculo::find($id);
+
+        $vehiculo->propietario_id = $request->name;
+        $vehiculo->id = $request->code;
+        $vehiculo->save();
+
+        $vehiculos - DB::table('vehiculos')
+           ->join('servicios' , 'vehiculos.id', '=' , 'servicios.id')
+           ->select('vehiculos.*' , 'servicios.vehiculo_id')
+           ->get();
+        return view('vehiculo.index' , ['vehiculos' => $vehiculos]);
     }
 
     /**
@@ -82,8 +96,8 @@ class VehiculoController extends Controller
         $vehiculo->delete();
 
         $vehiculos = DB::table('vehiculos')
-           ->join('propietarios' , 'vehiculos.id', '=' , 'propietarios.id')
-           ->select('vehiculos.*' , "propietarios.nombre")
+           ->join('servicios' , 'vehiculos.id', '=' , 'servicios.id')
+           ->select('vehiculos.*' , "servicios.vehiculo_id")
            ->get();
         return view('vehiculo.index' , ['vehiculos' => $vehiculos]);
     }
