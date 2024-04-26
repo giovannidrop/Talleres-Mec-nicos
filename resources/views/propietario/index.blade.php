@@ -20,9 +20,11 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th scope="col">Código</th>
-                    <th scope="col">País</th>
-                    <th scope="col">Capital</th>
+                    <th scope="col">id</th>
+                    <th scope="col">vehiculo_id</th>
+                    <th scope="col">Fecha_servicio</th>
+                    <th scope="col">Descripcion</th>
+                    <th scope="col">Costo</th>
                     <th scope="col">Acciones</th>
                 </tr>
             </thead>

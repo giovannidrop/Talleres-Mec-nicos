@@ -18,22 +18,22 @@
                 <label for="codigo" class="form-label">Id</label>
                 <input type="text" class="form-control" id="id" aria-describedby="codigoHelp" name="id"
                     disabled="disabled" value="{{ $vehiculo->id }}">
-                <div id="codigoHelp" class="form-text">Commnune Id</div>
+                <div id="codigoHelp" class="form-text">Vehiculo Id</div>
            </div>
           <div class="mb-3">
-             <label for="name" class="form-label">Commnune</label>
-             <input type="text" required class="form-control" id="name" placeholder="Commune name"
+             <label for="name" class="form-label">Vehiculo</label>
+             <input type="text" required class="form-control" id="name" placeholder="Vehiculo name"
                name="name" value="{{ $vehiculo->propietario_id }}">
             </div>
 
-            <label for="propietario">Propietario</label>
-            <select class="form-select" id="propietario" name="code" required>
+            <label for="servicio">Servicio</label>
+            <select class="form-select" id="servicio" name="code" required>
                 <option select disabled value="">choose one...</option>
-                @foreach ($propietarios as $propietario)
-                    @if($propietario->id == $comuna->id)
-                        <option select value="{{ $propietario->id }}">{{ $propietario->nombre }}</option>
+                @foreach ($servicios as $servicio)
+                    @if($servicio->id == $vehiculo->id)
+                        <option select value="{{ $servicio->id }}">{{ $servicio->vehiculo_id }}</option>
                     @else
-                        <option value="{{ $propietario->id }}">{{ $propietario->nombre }}</option>
+                        <option value="{{ $servicio->id }}">{{ $servicio->vehiculo_id }}</option>
                     @endif
                 @endforeach
             </select>
