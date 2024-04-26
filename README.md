@@ -4,10 +4,10 @@ El Sistema de Gestión de Talleres Mecánicos (SGTM) es una programa diseñado p
 
 ## Requisitos
 
-Git: Esencialmente, necesitas tener Git instalado en tu sistema. Git es un sistema de control de versiones distribuido que se utiliza para administrar el código fuente de un proyecto. Puedes descargar e instalar Git desde git-scm.com.
-Conexión a Internet: Para acceder al repositorio en GitHub y descargar el código fuente del proyecto, necesitas una conexión a Internet estable.
-Espacio en Disco: Asegúrate de tener suficiente espacio en disco para almacenar el código del proyecto y cualquier archivo relacionado que necesite ser descargado.
-Terminal o Interfaz Gráfica de Usuario (GUI) de Git: Puedes usar la línea de comandos (Terminal) o una interfaz gráfica de usuario (GUI) para trabajar con Git. Si prefieres la línea de comandos, necesitarás una terminal que te permita ejecutar comandos Git. Si prefieres una GUI, puedes utilizar aplicaciones como GitHub Desktop, Sourcetree, GitKraken, entre otras.
+- Git: Esencialmente, necesitas tener Git instalado en tu sistema. Git es un sistema de control de versiones distribuido que se utiliza para administrar el código fuente de un proyecto. Puedes descargar e instalar Git desde git-scm.com.
+- Conexión a Internet: Para acceder al repositorio en GitHub y descargar el código fuente del proyecto, necesitas una conexión a Internet estable.
+- Espacio en Disco: Asegúrate de tener suficiente espacio en disco para almacenar el código del proyecto y cualquier archivo relacionado que necesite ser descargado.
+- Terminal o Interfaz Gráfica de Usuario (GUI) de Git: Puedes usar la línea de comandos (Terminal) o una interfaz gráfica de usuario (GUI) para trabajar con Git. Si prefieres la línea de comandos, necesitarás una - terminal que te permita ejecutar comandos Git. Si prefieres una GUI, puedes utilizar aplicaciones como GitHub Desktop, Sourcetree, GitKraken, entre otras.
 
 ## Instalación
 
