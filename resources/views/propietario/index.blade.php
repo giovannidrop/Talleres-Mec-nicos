@@ -34,7 +34,7 @@
                     <td>{{ $propietario->apellido }}</td>
                     <td>
                     <a href="{{ route('propietarios.edit', ['propietario' => $propietario->id]) }}" class="btn btn-info">Editar</a>
-                        <form action="{{ route('propietarios.destroy', ['pais' => $pais->id]) }}" method="POST" style="display: inline-block">
+                        <form action="{{ route('propietarios.destroy', ['propietario' => $propietario->id]) }}" method="POST" style="display: inline-block">
                             @method('DELETE')
                             @csrf
                             <button type="submit" class="btn btn-danger">Eliminar</button>

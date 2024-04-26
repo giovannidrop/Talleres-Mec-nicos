@@ -13,9 +13,13 @@ class PropietarioController extends Controller
      */
     public function index()
     {
-        $propietarios = Propietario::find($id);
-        
-        return view('propietarios.edit', ['propietarios' => $propietarios]);
+        //$propietarios = Propietario::find($id);
+        //return view('propietarios.edit', ['propietarios' => $propietarios]);
+        $propietarios = DB::table('propietarios')
+         ->orderBy('nombre')
+         ->get();
+    
+        return view('propietario.index', ['propietarios' => $propietarios]);
     }
 
     /**
@@ -23,10 +27,14 @@ class PropietarioController extends Controller
      */
     public function create()
     {
-        $propietarios = Propietario::find($id);
-        $propietarios->update($request->all());
-    
-        return redirect()->route('propietarios.index');
+        //$propietarios = Propietario::find($id);
+        //$propietarios->update($request->all());
+        //return redirect()->route('propietarios.index');
+        $propietarios = DB::table('propietarios')
+            ->orderBy('nombre')
+            ->get();
+        
+        return view('propietario.new', ['propietarios' => $propietarios]);
     }
 
     /**
@@ -38,7 +46,7 @@ class PropietarioController extends Controller
          ->orderBy('nombre')
          ->get();
     
-        return view('propietarios.index', ['propietarios' => $propietarios]);
+        return view('propietario.index', ['propietarios' => $propietarios]);
     }
 
     /**
@@ -54,9 +62,9 @@ class PropietarioController extends Controller
      */
     public function edit(string $id)
     {
-        $propietarios = Propietario::find($id);
+        $propietario = Propietario::find($id);
         
-        return view('propietarios.edit', ['propietarios' => $propietarios]);
+        return view('propietario.edit', ['propietario' => $propietario]);
     }
 
     /**
@@ -64,8 +72,8 @@ class PropietarioController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $propietarios = Propietario::find($id);
-        $propietarios->update($request->all());
+        $propietario = Propietario::find($id);
+        $propietario->update($request->all());
     
         return redirect()->route('propietarios.index');
     }
