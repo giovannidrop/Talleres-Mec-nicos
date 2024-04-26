@@ -4,13 +4,12 @@ El Sistema de Gestión de Talleres Mecánicos (SGTM) es una programa diseñado p
 
 ## Requisitos
 
-- Requisitos necesarios para ejecutar el proyecto.
-- Dependencias y versiones específicas.
-- Instrucciones para instalar las dependencias.
+Git: Esencialmente, necesitas tener Git instalado en tu sistema. Git es un sistema de control de versiones distribuido que se utiliza para administrar el código fuente de un proyecto. Puedes descargar e instalar Git desde git-scm.com.
+Conexión a Internet: Para acceder al repositorio en GitHub y descargar el código fuente del proyecto, necesitas una conexión a Internet estable.
+Espacio en Disco: Asegúrate de tener suficiente espacio en disco para almacenar el código del proyecto y cualquier archivo relacionado que necesite ser descargado.
+Terminal o Interfaz Gráfica de Usuario (GUI) de Git: Puedes usar la línea de comandos (Terminal) o una interfaz gráfica de usuario (GUI) para trabajar con Git. Si prefieres la línea de comandos, necesitarás una terminal que te permita ejecutar comandos Git. Si prefieres una GUI, puedes utilizar aplicaciones como GitHub Desktop, Sourcetree, GitKraken, entre otras.
 
 ## Instalación
-
-Puedes seguir estos pasos para instalar el proyecto:
 
 1. Clona este repositorio: `git clone https://github.com/tu_usuario/tu_proyecto.git`
 2. Navega hasta el directorio del proyecto: `cd tu_proyecto`
@@ -21,24 +20,15 @@ Puedes seguir estos pasos para instalar el proyecto:
 
 Aquí encontrarás cómo usar el proyecto:
 
-1. Ejecuta el proyecto: `npm start` (o el comando correspondiente)
+1. Ejecuta el proyecto: "php artisan serve" 
 2. Accede a la URL proporcionada en la consola.
 3. Realiza cualquier acción necesaria según la funcionalidad del proyecto.
 
-## Contribución
 
-¡Agradecemos las contribuciones! Para contribuir a este proyecto, sigue estos pasos:
+## Estructura del Programa
 
-1. Haz un fork del repositorio.
-2. Crea una nueva rama: `git checkout -b nueva-caracteristica`
-3. Realiza tus cambios y haz commits: `git commit -m "Añade una nueva característica"`
-4. Haz push a la rama: `git push origin nueva-caracteristica`
-5. Crea un pull request en GitHub.
+La Estructura del archivo esta centrada en los Modelos, Vistas, Controladores y las Rutas, añadiendo Estructura de las Tablas:
 
-## Estructura de archivos
-
-La Estructura del archivo esta centrada en los Modelos, Vistas, Controladores y las Rutas, añadiendo 
-Estructura de las Tablas
 Vehículos (Entidad Fuerte):
 Esta tabla almacena información detallada sobre los vehículos atendidos en el taller.
 Incluye campos como la marca, modelo, año, matrícula y tipo de vehículo (por ejemplo, coche, moto, camión).
@@ -53,11 +43,6 @@ Servicios (Entidad Débil):
 Esta tabla actúa como una entidad débil que relaciona los vehículos con los servicios realizados.
 Registra la información sobre los servicios prestados, incluyendo la fecha del servicio, una descripción detallada y el costo.
 Cada servicio está vinculado a un vehículo a través de una clave externa (vehículo_id).
-
-## Créditos
-
-- Agradecimientos a los colaboradores del proyecto.
-- Referencias a recursos utilizados en el proyecto.
 
 
 ## Contacto
