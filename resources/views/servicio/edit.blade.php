@@ -14,7 +14,7 @@
     
 <div class="container">
     <h1>Edit Servicio</h1>
-    <form method="POST" action="{{ route('servicio.update', ['servicio' => $servicio->id]) }}">
+    <form method="POST" action="{{ route('servicios.update', ['servicio' => $servicio->id]) }}">
         @csrf
         @method('PUT')
         <div class="mb-3">

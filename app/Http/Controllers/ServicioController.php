@@ -14,9 +14,9 @@ class ServicioController extends Controller
     public function index()
     {
         $servicios = DB::table('servicios')
-        ->join('vehiculos', 'servicio.id', '=', 'vehiculos.id')
-        ->select('servicio.*', 'vehiculos.propietario_id')
-        ->orderBy('servicio.vehiculo_id')
+        ->join('vehiculos', 'servicios.id', '=', 'vehiculos.id')
+        ->select('servicios.*', 'vehiculos.propietario_id')
+        ->orderBy('servicios.vehiculo_id')
         ->get();
     
     return view('servicio.index', ['servicios' => $servicios]);
@@ -31,7 +31,7 @@ class ServicioController extends Controller
           ->orderBy('propietario_id')
            ->get();
 
-        return view('servicios.new', ['vehiculos' => $vehiculos]);
+        return view('servicio.new', ['vehiculos' => $vehiculos]);
     }
 
     /**
@@ -39,10 +39,10 @@ class ServicioController extends Controller
      */
     public function store(Request $request)
     {
-        $servicios = DB::table('servicio')
-            ->join('vehiculos', 'servicio.id', '=', 'vehiculos.id')
-            ->select('servicio.*', 'vehiculos.propietario_id')
-            ->orderBy('servicio.vehiculo_id')
+        $servicios = DB::table('servicios')
+            ->join('vehiculos', 'servicios.id', '=', 'vehiculos.id')
+            ->select('servicios.*', 'vehiculos.propietario_id')
+            ->orderBy('servicios.vehiculo_id')
             ->get();
         
         return view('servicio.index', ['servicios' => $servicios]);
